@@ -84,10 +84,10 @@ public class HdfsController extends BaseController {
         }
 
         // 在hdfs的/user/peter目录下创建一个文件，并写入一行文本
-        FSDataOutputStream os = fs.create(new Path("/user/peter/hhhh.log"));
-        os.write("Hello World!".getBytes());
-        os.flush();
-        os.close();
+//        FSDataOutputStream os = fs.create(new Path("/user/peter/hhhh.log"));
+//        os.write("Hello World!".getBytes());
+//        os.flush();
+//        os.close();
 
         // 列出hdfs上/user/peter/目录下的所有文件和目录
         FileStatus[] statuses = fs.listStatus(new Path("/user/peter"));

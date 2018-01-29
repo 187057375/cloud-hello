@@ -1,6 +1,7 @@
-package com.mycompany.cloud.controller.test;
+package com.mycompany.cloud.controller.test.ribbon;
 
 import com.mycompany.cloud.controller.BaseController;
+import com.mycompany.cloud.controller.test.DemoController;
 import com.mycompany.cloud.domain.test.NewsMb;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -26,7 +27,7 @@ import java.util.Map;
  *          Copyright 2017 by PreTang
  */
 @RestController
-@RequestMapping("/test/restTest")
+@RequestMapping("/test/ribbon")
 public class RestTestController extends BaseController {
 
     @Autowired

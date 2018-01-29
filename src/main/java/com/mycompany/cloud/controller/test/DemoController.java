@@ -3,9 +3,7 @@ package com.mycompany.cloud.controller.test;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.mycompany.cloud.controller.BaseController;
-import com.mycompany.cloud.domain.test.EsBook;
 import com.mycompany.cloud.domain.test.MongoBook;
-import com.mycompany.cloud.service.test.EsBookRepository;
 import com.mycompany.cloud.service.test.MongoBookRepository;
 import com.mycompany.cloud.service.test.MongoBookService;
 import org.apache.commons.logging.Log;
@@ -37,8 +35,8 @@ public class DemoController extends BaseController {
 
     @Autowired
     private AmqpTemplate rabbitTemplate;
-    @Autowired
-    private EsBookRepository esBookRepository;
+//    @Autowired
+//    private EsBookRepository esBookRepository;
     @Autowired
     private MongoBookRepository mongoBookRepository;
     @Autowired
@@ -135,6 +133,7 @@ public class DemoController extends BaseController {
 
 
     //es使用-demo
+/*
     @RequestMapping(value = "/es", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
     public Map<String, Object> es() {
         Map<String, Object> result = new HashMap<>();
@@ -166,6 +165,7 @@ public class DemoController extends BaseController {
         }
         return result;
     }
+*/
 
     ////mongo使用-demo
     @RequestMapping(value = "/addMongoBook", method = RequestMethod.GET, produces = "application/json; charset=utf-8")

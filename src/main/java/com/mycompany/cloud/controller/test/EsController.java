@@ -1,22 +1,8 @@
 package com.mycompany.cloud.controller.test;
 
 import com.mycompany.cloud.controller.BaseController;
-import com.mycompany.cloud.domain.test.EsBook;
-import com.mycompany.cloud.service.test.EsBookRepository;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -28,12 +14,17 @@ import java.util.Map;
 @RestController
 @RequestMapping("/test/es")
 public class EsController extends BaseController {
+/*
 
-    /*ElasticsearchRepository spring.data.elasticsearch查询*/
+    */
+/*ElasticsearchRepository spring.data.elasticsearch查询*//*
+
     @Autowired
     private EsBookRepository esBookRepository;
 
-    /*原生 es api*/
+    */
+/*原生 es api*//*
+
     @Autowired
     private ElasticsearchTemplate elasticsearchTemplate;
 
@@ -112,5 +103,6 @@ public class EsController extends BaseController {
         }
         return  result;
     }
+*/
 
 }

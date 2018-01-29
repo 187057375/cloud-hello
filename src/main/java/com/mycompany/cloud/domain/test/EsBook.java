@@ -1,9 +1,8 @@
 package com.mycompany.cloud.domain.test;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
 
-@Document(indexName = "mybook", type = "books")
+//@Document(indexName = "mybook", type = "books")
 public class EsBook {
 
     @Id

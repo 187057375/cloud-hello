@@ -1,4 +1,4 @@
-package com.mycompany.cloud.controller.test;
+package com.mycompany.cloud.controller.test.mybatis;
 
 import com.mycompany.cloud.controller.BaseController;
 import com.mycompany.cloud.domain.test.NewsMb;
@@ -21,7 +21,7 @@ import java.util.Map;
  *          Copyright 2017 by PreTang
  */
 @RestController
-@RequestMapping("/test/hbase")
+@RequestMapping("/test/mybatis")
 public class MybatisController extends BaseController {
 
 
@@ -31,8 +31,8 @@ public class MybatisController extends BaseController {
     @Autowired
     private TestNewsMybatisDao testNewsMybatisDao;
 
-    @RequestMapping(value = "/mybatis" ,method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-    public Map<String, Object> mybatis(Integer id) {
+    @RequestMapping(value = "/queryNews" ,method = RequestMethod.GET, produces = "application/json; charset=utf-8")
+    public Map<String, Object> queryNews(Integer id) {
         Map<String, Object> result = new HashMap<>();
         try {
             NewsMb newsMb = testNewsMybatisDao.queryNewsMb(id);

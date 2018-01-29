@@ -2,7 +2,6 @@ package com.mycompany.cloud.controller.test;
 
 import com.mycompany.cloud.controller.BaseController;
 import com.mycompany.cloud.domain.test.NewsMb;
-import com.mycompany.cloud.service.test.EsBookRepository;
 import com.mycompany.cloud.service.test.MongoBookRepository;
 import com.mycompany.cloud.service.test.MongoBookService;
 import org.apache.commons.logging.Log;
@@ -35,8 +34,7 @@ public class MqController extends BaseController {
 
     @Autowired
     private AmqpTemplate rabbitTemplate;
-    @Autowired
-    private EsBookRepository esBookRepository;
+
     @Autowired
     private MongoBookRepository mongoBookRepository;
     @Autowired

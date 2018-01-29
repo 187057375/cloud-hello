@@ -1,7 +1,7 @@
 package com.mycompany.cloud.service.test;
 
 import com.mycompany.cloud.domain.test.MongoBook;
-import org.elasticsearch.common.Strings;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -32,7 +32,7 @@ public class MongoBookService {
 
     public Map<String, Object> findByTemplate(String firstname){
         Criteria criteria = new Criteria();
-        if (!Strings.isNullOrEmpty(firstname)) {
+        if (!StringUtils.isEmpty(firstname)) {
             criteria.orOperator(Criteria.where("firstname").regex(".*?" + firstname + ".*"));
         }
         Query query = new Query(criteria);

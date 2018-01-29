@@ -10,20 +10,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * 演示框架代码
+ *
  * @author peter
  * @version V1.0 创建时间：17/8/31
  *          Copyright 2017 by PreTang
  */
 
+
 public class HbaseCrud {
 
 
     public static Configuration configuration = null;
-    static
-    {
+
+    static {
         configuration = HBaseConfiguration.create();
         configuration.set("hbase.zookeeper.quorum", "127.0.0.1:2181");
         //configuration.set("hbase.master", "192.168.0.201:60000");
@@ -31,24 +32,25 @@ public class HbaseCrud {
     }
 
     //比较过滤器
-    public void filterTest(String tablename){
-        Scan scan=new Scan();//扫描器
+    public void filterTest(String tablename) {
+
+        Scan scan = new Scan();//扫描器
         scan.setCaching(1000);//缓存1000条数据,一次读取1000条
-        RowFilter filter =new RowFilter(CompareFilter.CompareOp.EQUAL,new BinaryComparator("Jack".getBytes()));
-        RowFilter filter1 =new RowFilter(CompareFilter.CompareOp.EQUAL,new RegexStringComparator("J\\w+"));
+        RowFilter filter = new RowFilter(CompareFilter.CompareOp.EQUAL, new BinaryComparator("Jack".getBytes()));
+        RowFilter filter1 = new RowFilter(CompareFilter.CompareOp.EQUAL, new RegexStringComparator("J\\w+"));
         scan.setFilter(filter);
         try {
             HTable table = new HTable(configuration, tablename);
-            ResultScanner scanner=table.getScanner(scan);//返回迭代器
-            for(Result res:scanner){
-                String rowkey= Bytes.toString(res.getRow());
-                KeyValue[] kvs=res.raw();
+            ResultScanner scanner = table.getScanner(scan);//返回迭代器
+            for (Result res : scanner) {
+                String rowkey = Bytes.toString(res.getRow());
+                KeyValue[] kvs = res.raw();
                 System.out.println("----");
-                for (KeyValue kv:kvs){
-                    String family= Bytes.toString(kv.getFamily());
-                    String qualifier= Bytes.toString(kv.getQualifier());
-                    String value =  Bytes.toString(kv.getValue());
-                    System.out.println("rowkey->"+rowkey+"family->"+qualifier+"value->"+value);
+                for (KeyValue kv : kvs) {
+                    String family = Bytes.toString(kv.getFamily());
+                    String qualifier = Bytes.toString(kv.getQualifier());
+                    String value = Bytes.toString(kv.getValue());
+                    System.out.println("rowkey->" + rowkey + "family->" + qualifier + "value->" + value);
                 }
                 System.out.println("----");
             }
@@ -59,13 +61,12 @@ public class HbaseCrud {
         }
     }
 
-    public   void selectRowKey(String tablename, String rowKey) throws IOException
-    {
+    public void selectRowKey(String tablename, String rowKey) throws IOException {
         HTable table = new HTable(configuration, tablename);
         Get g = new Get(rowKey.getBytes());
         Result rs = table.get(g);
-        Result result=table.get(g);
-        for(Cell cell:result.listCells()){
+        Result result = table.get(g);
+        for (Cell cell : result.listCells()) {
             System.out.println("--------------------" + Bytes.toString(CellUtil.cloneRow(cell)) + "----------------------------");
             System.out.println("Column Family: " + Bytes.toString(CellUtil.cloneFamily(cell)));
             System.out.println("Column       :" + Bytes.toString(CellUtil.cloneQualifier(cell)));
@@ -74,8 +75,7 @@ public class HbaseCrud {
         }
 
 
-        for (KeyValue kv : rs.raw())
-        {
+        for (KeyValue kv : rs.raw()) {
             System.out.println("--------------------" + new String(kv.getRow()) + "----------------------------");
             System.out.println("Column Family: " + new String(kv.getFamily()));
             System.out.println("Column       :" + new String(kv.getQualifier()));
@@ -83,19 +83,18 @@ public class HbaseCrud {
         }
     }
 
-    public   void selectAll(String tablename) throws IOException
-    {
-        Scan scan=new Scan();//扫描器
-        //scan.addFamily(Bytes.toBytes("mobile"));
+    public void selectAll(String tablename) throws IOException {
+        Scan scan = new Scan();//扫描器
+        //scan.addFamily(Bytes.toBytes("mobile")); 只查询mobile列族
         scan.setCaching(1000);//缓存1000条数据,一次读取1000条
         try {
             System.out.println("2-------------------------");
             HTable table = new HTable(configuration, tablename);
-            ResultScanner scanner=table.getScanner(scan);//返回迭代器
-            for(Result result:scanner){
-                String rowkey= Bytes.toString(result.getRow());
-                KeyValue[] kvs=result.raw();
-                for(Cell cell:result.rawCells()){
+            ResultScanner scanner = table.getScanner(scan);//返回迭代器
+            for (Result result : scanner) {
+                String rowkey = Bytes.toString(result.getRow());
+                KeyValue[] kvs = result.raw();
+                for (Cell cell : result.rawCells()) {
                     System.out.println("--------------------" + Bytes.toString(CellUtil.cloneRow(cell)) + "----------------------------");
                     System.out.println("Column Family: " + Bytes.toString(CellUtil.cloneFamily(cell)));
                     System.out.println("Column       :" + Bytes.toString(CellUtil.cloneQualifier(cell)));
@@ -143,7 +142,8 @@ public class HbaseCrud {
         }
         System.out.println("end create table ......");
     }
-    public static void insertData(String tableName) throws IOException{
+
+    public static void insertData(String tableName) throws IOException {
         System.out.println("start insert data ......");
         HTable table = new HTable(configuration, tableName);
         //HTablePool pool = new HTablePool(configuration, 1000);
@@ -176,7 +176,7 @@ public class HbaseCrud {
 
     }
 
-    public static void deleteRow(String tablename, String rowkey)  {
+    public static void deleteRow(String tablename, String rowkey) {
         try {
             HTable table = new HTable(configuration, tablename);
             List list = new ArrayList();
@@ -194,11 +194,10 @@ public class HbaseCrud {
     }
 
 
-    public static void deleteByCondition(String tablename, String rowkey)  {
+    public static void deleteByCondition(String tablename, String rowkey) {
         //目前还没有发现有效的API能够实现根据非rowkey的条件删除这个功能能，还有清空表全部数据的API操作
 
     }
-
 
 
     public static void QueryAll(String tableName) {
@@ -304,7 +303,6 @@ public class HbaseCrud {
         }
 
     }
-
 
 
     public static void main(String[] args) throws Exception {

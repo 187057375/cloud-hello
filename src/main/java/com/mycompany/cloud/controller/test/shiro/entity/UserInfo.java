@@ -1,6 +1,5 @@
-package com.neo.entity;
+package com.mycompany.cloud.controller.test.shiro.entity;
 
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.io.Serializable;

@@ -1,4 +1,4 @@
-package com.neo.config;
+package com.mycompany.cloud.controller.test.shiro.config;
 
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;

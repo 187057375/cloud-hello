@@ -1,4 +1,4 @@
-package com.neo.web;
+package com.mycompany.cloud.controller.test.shiro.web;
 
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;

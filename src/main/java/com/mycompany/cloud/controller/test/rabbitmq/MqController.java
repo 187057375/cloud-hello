@@ -1,4 +1,4 @@
-package com.mycompany.cloud.controller.test;
+package com.mycompany.cloud.controller.test.rabbitmq;
 
 import com.mycompany.cloud.controller.BaseController;
 import com.mycompany.cloud.domain.test.NewsMb;

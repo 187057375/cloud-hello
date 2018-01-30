@@ -1,6 +1,5 @@
-package com.neo.entity;
+package com.mycompany.cloud.controller.test.shiro.entity;
 
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -9,7 +8,7 @@ import java.util.List;
 @Entity
 public class SysPermission implements Serializable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;//主键.
     private String name;//名称.
     @Column(columnDefinition="enum('menu','button')")

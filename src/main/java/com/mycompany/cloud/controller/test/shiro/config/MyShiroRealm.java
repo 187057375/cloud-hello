@@ -1,9 +1,9 @@
-package com.neo.config;
+package com.mycompany.cloud.controller.test.shiro.config;
 
-import com.neo.entity.SysPermission;
-import com.neo.entity.SysRole;
-import com.neo.entity.UserInfo;
-import com.neo.sevice.UserInfoService;
+import com.mycompany.cloud.controller.test.shiro.entity.SysPermission;
+import com.mycompany.cloud.controller.test.shiro.entity.SysRole;
+import com.mycompany.cloud.controller.test.shiro.entity.UserInfo;
+import com.mycompany.cloud.controller.test.shiro.sevice.UserInfoService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

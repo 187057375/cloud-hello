@@ -1,8 +1,8 @@
-package com.neo.sevice.impl;
+package com.mycompany.cloud.controller.test.shiro.sevice.impl;
 
-import com.neo.dao.UserInfoDao;
-import com.neo.entity.UserInfo;
-import com.neo.sevice.UserInfoService;
+import com.mycompany.cloud.controller.test.shiro.sevice.UserInfoService;
+import com.mycompany.cloud.controller.test.shiro.dao.UserInfoDao;
+import com.mycompany.cloud.controller.test.shiro.entity.UserInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

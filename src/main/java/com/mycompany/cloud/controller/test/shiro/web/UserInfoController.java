@@ -1,4 +1,4 @@
-package com.neo.web;
+package com.mycompany.cloud.controller.test.shiro.web;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;

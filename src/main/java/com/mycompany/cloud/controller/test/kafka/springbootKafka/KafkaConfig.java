@@ -1,4 +1,4 @@
-package com.mycompany.cloud.controller.test;
+package com.mycompany.cloud.controller.test.kafka.springbootKafka;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;

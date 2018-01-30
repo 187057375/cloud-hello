@@ -1,4 +1,4 @@
-package com.mycompany.cloud.controller.test;
+package com.mycompany.cloud.controller.test.hbase;
 
 import com.mycompany.cloud.controller.BaseController;
 import com.mycompany.cloud.service.test.HbaseTestService;

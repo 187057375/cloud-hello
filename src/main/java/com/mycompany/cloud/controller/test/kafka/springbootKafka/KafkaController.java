@@ -1,4 +1,4 @@
-package com.mycompany.cloud.controller.test;
+package com.mycompany.cloud.controller.test.kafka.springbootKafka;
 
 import com.mycompany.cloud.controller.BaseController;
 import org.apache.commons.logging.Log;

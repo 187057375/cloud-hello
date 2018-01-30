@@ -1,4 +1,4 @@
-package com.mycompany.cloud.controller.test;
+package com.mycompany.cloud.controller.test.kafka.springbootKafka;
 
 //@EnableBinding(Sink.class)
 public class KafkaReceiver {

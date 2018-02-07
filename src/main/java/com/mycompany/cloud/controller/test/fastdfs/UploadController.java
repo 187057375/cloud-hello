@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -57,6 +59,22 @@ public class UploadController extends BaseController {
         fileAbsolutePath = FastDFSClient.upload(file);
         String path=FastDFSClient.getTrackerUrl()+fileAbsolutePath[0]+ "/"+fileAbsolutePath[1];
         return path;
+    }
+
+    public static void main(String[] args) throws Exception{
+        InputStream in = new FileInputStream("/Users/baoya/Documents/WechatIMG8.jpg");
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024 *4];
+        int n = 0;
+        while ((n = in.read(buffer)) != -1) {
+            out.write(buffer, 0, n);
+        }
+
+        FastDFSFile file = new FastDFSFile("test.jpg", out.toByteArray(), "jpg");
+        in.close();
+        String[] fileAbsolutePath = FastDFSClient.upload(file);
+        String path=FastDFSClient.getTrackerUrl()+fileAbsolutePath[0]+ "/"+fileAbsolutePath[1];
+        System.out.println(path);
     }
 
 }

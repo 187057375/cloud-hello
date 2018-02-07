@@ -22,7 +22,7 @@ import java.util.Map;
  * mongo演示
  */
 @RestController
-@RequestMapping("/test/demo")
+@RequestMapping("/test/mongo")
 public class MongoCrudController extends BaseController {
 
 
@@ -80,5 +80,10 @@ public class MongoCrudController extends BaseController {
     @RequestMapping(value = "/findByTemplate", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
     public Map<String, Object> findByTemplate(@RequestParam("firstname") String firstname) {
         return mongoBookService.findByTemplate(firstname);
+    }
+
+    public static void main(String[] args) {
+        MongoCrudController t = new MongoCrudController();
+        System.out.println( t.findByQuery("") );
     }
 }

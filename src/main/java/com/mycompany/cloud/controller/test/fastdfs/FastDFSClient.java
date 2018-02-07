@@ -20,18 +20,20 @@ public class FastDFSClient {
     private static org.slf4j.Logger logger = LoggerFactory.getLogger(FastDFSClient.class);
     private static TrackerClient trackerClient;
     private static TrackerServer trackerServer;
-    private static StorageClient storageClient;
     private static StorageServer storageServer;
+    private static StorageClient storageClient;
 
     static {
         try {
-            String filePath = new ClassPathResource("fdfs_client.conf").getFile().getAbsolutePath();;
+            String filePath = new ClassPathResource("fastdfs.properties").getFile().getAbsolutePath();;
+
             ClientGlobal.init(filePath);
             trackerClient = new TrackerClient();
             trackerServer = trackerClient.getConnection();
             storageServer = trackerClient.getStoreStorage(trackerServer);
         } catch (Exception e) {
-            logger.error("FastDFS Client Init Fail!",e);
+            e.printStackTrace();
+           // logger.error("FastDFS Client Init Fail!",e);
         }
     }
 
@@ -45,10 +47,12 @@ public class FastDFSClient {
         String[] uploadResults = null;
         try {
             storageClient = new StorageClient(trackerServer, storageServer);
-            uploadResults = storageClient.upload_file(file.getContent(), file.getExt(), meta_list);
+            uploadResults = storageClient.upload_file("cloud-hello",file.getContent(), file.getExt(), meta_list);
         } catch (IOException e) {
-            logger.error("IO Exception when uploadind the file:" + file.getName(), e);
+            e.printStackTrace();
+            //logger.error("IO Exception when uploadind the file:" + file.getName(), e);
         } catch (Exception e) {
+            e.printStackTrace();
             logger.error("Non IO Exception when uploadind the file:" + file.getName(), e);
         }
         logger.info("upload_file time used:" + (System.currentTimeMillis() - startTime) + " ms");

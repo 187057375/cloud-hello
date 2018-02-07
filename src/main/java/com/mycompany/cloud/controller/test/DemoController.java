@@ -1,9 +1,6 @@
 package com.mycompany.cloud.controller.test;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
 import com.mycompany.cloud.controller.BaseController;
-import com.mycompany.cloud.domain.test.MongoBook;
 import com.mycompany.cloud.service.test.MongoBookRepository;
 import com.mycompany.cloud.service.test.MongoBookService;
 import org.apache.commons.logging.Log;
@@ -11,7 +8,10 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
@@ -167,55 +167,6 @@ public class DemoController extends BaseController {
     }
 */
 
-    ////mongo使用-demo
-    @RequestMapping(value = "/addMongoBook", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-    public MongoBook addMongoBook(@RequestParam("firstname") String firstname,
-                                  @RequestParam("secondname") String secondname) {
-        //
-        DBObject documents = new BasicDBObject("name", "张三")
-                .append("age", 45)
-                .append("sex", "男")
-                .append("address", new BasicDBObject("postCode", 100000).append("street", "深南大道888号").append("city", "深圳"));
-
-
-        //对象方式
-        MongoBook customer = new MongoBook();
-        customer.setFirstname(firstname);
-        customer.setSecondname(secondname);
-        return mongoBookRepository.save(customer);
-
-    }
-
-    @RequestMapping(value = "/getAllMongoBook", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-    public List<MongoBook> getAllMongoBook() {
-        return mongoBookRepository.findAll();
-    }
-
-    @RequestMapping(value = "/getMongoBookByFirstname", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-    public MongoBook getMongoBookByFirstname(@RequestParam("firstname") String firstname) {
-        return mongoBookRepository.findByFirstname(firstname);
-    }
-
-    @RequestMapping(value = "/getMongoBookBySecondname", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-    public List<MongoBook> getMongoBookBySecondname(@RequestParam("secondname") String secondname) {
-        return mongoBookRepository.findBySecondname(secondname);
-    }
-
-    @RequestMapping(value = "/deleteMongoBookById", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-    public boolean deleteMongoBookById(@RequestParam("cid") String cid) {
-        mongoBookRepository.delete(cid);
-        return true;
-    }
-
-    @RequestMapping(value = "/findByQuery", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-    public List<MongoBook> findByQuery(@RequestParam("firstname") String firstname) {
-        return mongoBookRepository.findByQuery(firstname);
-    }
-
-    @RequestMapping(value = "/findByTemplate", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-    public Map<String, Object> findByTemplate(@RequestParam("firstname") String firstname) {
-        return mongoBookService.findByTemplate(firstname);
-    }
 
     @RequestMapping(value = "/remoteObj", produces = "application/json; charset=utf-8")
     @ResponseBody

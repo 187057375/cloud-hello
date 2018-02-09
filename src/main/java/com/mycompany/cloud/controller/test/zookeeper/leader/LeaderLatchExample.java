@@ -28,7 +28,7 @@ public class LeaderLatchExample {
 			Thread.sleep(10000);
 
 			System.out.println("----------关闭前5个客户端，再观察选举leader的结果-----------");
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 8; i++) {
 				clients.get(i).close();
 			}
 

@@ -11,8 +11,6 @@ import java.util.concurrent.Executors;
 
 /**
  * leader选举
- * 
- * @author shencl
  */
 public class LeaderLatchClient implements Closeable {
 	private final LeaderLatch leaderLatch;

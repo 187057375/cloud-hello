@@ -11,8 +11,6 @@ import java.util.List;
 
 /**
  * leader选举
- * 
- * @author shencl
  */
 public class LeaderSelectorExample {
 

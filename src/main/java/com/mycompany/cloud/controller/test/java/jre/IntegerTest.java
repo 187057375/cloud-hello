@@ -1,4 +1,4 @@
-package com.mycompany.cloud.controller.test.java;
+package com.mycompany.cloud.controller.test.java.jre;
 
 /**
  * @author peter

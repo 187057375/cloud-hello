@@ -8,10 +8,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
@@ -58,6 +55,8 @@ public class DemoController extends BaseController {
     @SuppressWarnings("unused")
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
+
+        System.out.println("hello==========================");
         return "read remote prop hello=";
     }
 

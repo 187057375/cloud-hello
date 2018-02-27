@@ -1,9 +1,7 @@
 package com.mycompany.cloud.controller.test.java.http;
 
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.mycompany.cloud.domain.test.NewsMb;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
@@ -34,18 +32,22 @@ public class HttpUtil {
     }
 
     public static void httpPostJson() {
-        NewsMb nm = new NewsMb();
-        nm.setShareTotal(33);
-        String payout = JSON.toJSONString(nm, SerializerFeature.WriteMapNullValue);
+//        NewsMb nm = new NewsMb();
+//        nm.setShareTotal(33);
+//        String payload = JSON.toJSONString(nm, SerializerFeature.WriteMapNullValue);
+
+        JSONObject jsonParam = new JSONObject();
+        jsonParam.put("id", "11");
+        jsonParam.put("type", "类型");
+        String payload = jsonParam.toJSONString();
+
         CloseableHttpClient closeHttpClient = HttpClients.createDefault();
         CloseableHttpResponse httpResponse = null;
         //发送Post请求
-        HttpPost httpPost = new HttpPost("http://127.0.0.1:8080/index/demo");
-        List<NameValuePair> params = new ArrayList();
-        params.add(new BasicNameValuePair("ss", "test123"));
+        HttpPost httpPost = new HttpPost("http://127.0.0.1:9999/java/http/httpbody/testRequestBody");
         try {
 
-            StringEntity entity = new StringEntity(payout, "utf-8");//解决中文乱码问题
+            StringEntity entity = new StringEntity(payload, "utf-8");//解决中文乱码问题
             entity.setContentEncoding("UTF-8");
             entity.setContentType("application/json");
             httpPost.setEntity(entity);
@@ -74,7 +76,7 @@ public class HttpUtil {
 
     }
 
-    public static void httpPostMulte() {
+    public static void httpPostMulteFile() {
 
     }
 

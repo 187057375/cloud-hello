@@ -59,7 +59,6 @@ public class ApplicationHello {
     }
     public static void main(String[] args) {
         System.out.println("hello-----");
-
         new SpringApplicationBuilder(ApplicationHello.class).web(true).run(args);
     }
 

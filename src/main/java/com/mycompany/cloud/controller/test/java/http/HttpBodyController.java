@@ -24,11 +24,16 @@ public class HttpBodyController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/testRequestBody")
     public Map<String, Object> testRequestBody(@RequestBody Map<String, Object> map) {
-        System.out.println("================"+map);
+        System.out.println("j================"+map);
         return map;
     }
 
-
+    @ResponseBody
+    @RequestMapping(value = "/testRequestParam")
+    public Map<String, Object> testRequestParam(@RequestParam Map<String, Object> map) {
+        System.out.println("p================"+map);
+        return map;
+    }
 
 
 

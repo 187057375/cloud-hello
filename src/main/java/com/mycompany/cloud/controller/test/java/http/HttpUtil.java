@@ -39,6 +39,10 @@ public class HttpUtil {
         JSONObject jsonParam = new JSONObject();
         jsonParam.put("id", "11");
         jsonParam.put("type", "类型");
+        JSONObject jsonParamOrder = new JSONObject();
+        jsonParamOrder.put("oid", "a");
+        jsonParamOrder.put("otype", "手机");
+        jsonParam.put("order",jsonParamOrder);
         String payload = jsonParam.toJSONString();
 
         CloseableHttpClient closeHttpClient = HttpClients.createDefault();
@@ -76,17 +80,15 @@ public class HttpUtil {
 
     }
 
-    public static void httpPostMulteFile() {
 
-    }
-
-    public static void httpPost() {
+    public static void httpPostParam() {
         CloseableHttpClient closeHttpClient = HttpClients.createDefault();
         CloseableHttpResponse httpResponse = null;
         //发送Post请求
-        HttpPost httpPost = new HttpPost("http://127.0.0.1:8080/index/demo");
+        HttpPost httpPost = new HttpPost("http://127.0.0.1:9999/java/http/httpbody/testRequestParam");
         List<NameValuePair> params = new ArrayList();
         params.add(new BasicNameValuePair("ss", "test123"));
+        params.add(new BasicNameValuePair("bb", "哈哈"));
         try {
             //转换参数并设置编码格式
             httpPost.setEntity(new UrlEncodedFormEntity(params, Consts.UTF_8));
@@ -112,4 +114,9 @@ public class HttpUtil {
             e.printStackTrace();
         }
     }
+
+    public static void httpPostMulteFile() {
+
+    }
+
 }

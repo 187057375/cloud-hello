@@ -1,4 +1,4 @@
-package com.mycompany.cloud.controller.test.netty.echo;
+package com.mycompany.cloud.controller.test.netty.http.serverByMy.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -8,19 +8,16 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.DelimiterBasedFrameDecoder;
-import io.netty.handler.codec.Delimiters;
-import io.netty.handler.codec.string.StringDecoder;
-import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.codec.http.HttpResponseEncoder;
 
 /**
  * 应答服务器
  */
-public class EchoServer {
+public class HttpServerNetty {
 
     private int port;
 
-    public EchoServer(int port) {
+    public HttpServerNetty(int port) {
         this.port = port;
     }
 
@@ -34,14 +31,14 @@ public class EchoServer {
              .childHandler(new ChannelInitializer<SocketChannel>() { // (4)
                  @Override
                  public void initChannel(SocketChannel ch) throws Exception {
-                	 ch.pipeline().addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
-                     ch.pipeline().addLast("decoder", new StringDecoder());
-                     ch.pipeline().addLast("encoder", new StringEncoder());
-                     ch.pipeline().addLast(new EchoServerHandler());
+                     ch.pipeline().addLast("encoder", new HttpResponseEncoder());
+                     ch.pipeline().addLast(new HttpServerNettyHandler());
                  }
              })
-             .option(ChannelOption.SO_BACKLOG, 128)          // (5)
+             .option(ChannelOption.SO_BACKLOG, 128)
+             //.option(ChannelOption.TCP_NODELAY, true)     // (5)
              .childOption(ChannelOption.SO_KEEPALIVE, true); // (6)
+
 
             // 绑定端口，开始接收进来的连接
             ChannelFuture f = b.bind(port).sync(); // (7)
@@ -63,6 +60,6 @@ public class EchoServer {
         } else {
             port = 8081;
         }
-        new EchoServer(port).run();
+        new HttpServerNetty(port).run();
     }
 }

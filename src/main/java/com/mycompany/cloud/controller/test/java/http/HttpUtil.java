@@ -28,7 +28,8 @@ public class HttpUtil {
 
 
     public static void main(String[] args) throws Exception {
-        HttpUtil.httpPostJson();
+       // HttpUtil.httpPostJson();
+        HttpUtil.httpPostParam();
     }
 
     public static void httpPostJson() {

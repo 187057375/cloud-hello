@@ -12,6 +12,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -28,8 +29,8 @@ public class HttpUtil {
 
 
     public static void main(String[] args) throws Exception {
-       // HttpUtil.httpPostJson();
-        HttpUtil.httpPostParam();
+        HttpUtil.httpPostJson();
+       // HttpUtil.httpPostParam();
     }
 
     public static void httpPostJson() {
@@ -49,7 +50,7 @@ public class HttpUtil {
         CloseableHttpClient closeHttpClient = HttpClients.createDefault();
         CloseableHttpResponse httpResponse = null;
         //发送Post请求
-        HttpPost httpPost = new HttpPost("http://127.0.0.1:9999/java/http/httpbody/testRequestBody");
+        HttpPost httpPost = new HttpPost("http://172.28.1.12:8080/app/sso/hmfaccount/editNickName");
         try {
 
             StringEntity entity = new StringEntity(payload, "utf-8");//解决中文乱码问题
@@ -62,18 +63,10 @@ public class HttpUtil {
             System.out.println(httpResponse.getStatusLine());
             //返回对象 向上造型
             HttpEntity httpEntity = httpResponse.getEntity();
-            if (httpEntity != null) {
-                //响应输入流
-                InputStream is = httpEntity.getContent();
-                //转换为字符输入流
-                BufferedReader br = new BufferedReader(new InputStreamReader(is, Consts.UTF_8));
-                String line = null;
-                while ((line = br.readLine()) != null) {
-                    System.out.println(line);
-                }
-                //关闭输入流
-                is.close();
-            }
+
+
+            String response = EntityUtils.toString(httpEntity,"UTF-8");
+            System.out.println(response);
         } catch (Exception e) {
             e.printStackTrace();
         }

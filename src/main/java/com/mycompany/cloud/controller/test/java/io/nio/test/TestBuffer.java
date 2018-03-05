@@ -1,6 +1,4 @@
-package com.yasin.nio.test;
-
-import java.nio.IntBuffer;
+package com.mycompany.cloud.controller.test.java.io.nio.test;
 
 public class TestBuffer {
 	

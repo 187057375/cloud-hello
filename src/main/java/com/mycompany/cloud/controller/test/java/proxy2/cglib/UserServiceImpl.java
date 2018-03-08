@@ -1,4 +1,4 @@
-package com.mycompany.cloud.controller.test.java.proxy.cglib;
+package com.mycompany.cloud.controller.test.java.proxy2.cglib;
 
 //定义业务逻辑
 public class UserServiceImpl {

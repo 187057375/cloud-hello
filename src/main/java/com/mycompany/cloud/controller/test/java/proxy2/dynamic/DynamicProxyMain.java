@@ -1,7 +1,7 @@
-package com.mycompany.cloud.controller.test.java.proxy.dynamic;
+package com.mycompany.cloud.controller.test.java.proxy2.dynamic;
 
-import com.mycompany.cloud.controller.test.java.proxy.UserInterface;
-import com.mycompany.cloud.controller.test.java.proxy.UserInterfaceImpl;
+import com.mycompany.cloud.controller.test.java.proxy2.UserInterface;
+import com.mycompany.cloud.controller.test.java.proxy2.UserInterfaceImpl;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;

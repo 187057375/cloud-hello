@@ -1,4 +1,4 @@
-package com.mycompany.cloud.controller.test.java.proxy.dynamic;
+package com.mycompany.cloud.controller.test.java.proxy2.dynamic;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

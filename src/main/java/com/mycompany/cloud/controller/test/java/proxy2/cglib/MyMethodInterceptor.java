@@ -1,4 +1,4 @@
-package com.mycompany.cloud.controller.test.java.proxy.cglib;
+package com.mycompany.cloud.controller.test.java.proxy2.cglib;
 
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;

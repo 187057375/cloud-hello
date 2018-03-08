@@ -1,4 +1,4 @@
-package com.mycompany.cloud.controller.test.java.proxy;
+package com.mycompany.cloud.controller.test.java.proxy2;
 
 /**
  * 接口

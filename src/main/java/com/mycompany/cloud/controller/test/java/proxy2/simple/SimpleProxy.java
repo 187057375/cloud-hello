@@ -1,6 +1,6 @@
-package com.mycompany.cloud.controller.test.java.proxy.simple;
+package com.mycompany.cloud.controller.test.java.proxy2.simple;
 
-import com.mycompany.cloud.controller.test.java.proxy.UserInterface;
+import com.mycompany.cloud.controller.test.java.proxy2.UserInterface;
 
 /**
  * java 静态代理

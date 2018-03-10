@@ -1,8 +1,8 @@
 package com.mycompany.cloud.controller.test.rpc.myrpc.server;
 
-import com.xxx.rpc.common.bean.RpcRequest;
-import com.xxx.rpc.common.bean.RpcResponse;
-import com.xxx.rpc.common.util.StringUtil;
+import com.mycompany.cloud.controller.test.rpc.myrpc.common.bean.RpcRequest;
+import com.mycompany.cloud.controller.test.rpc.myrpc.common.bean.RpcResponse;
+import com.mycompany.cloud.controller.test.rpc.myrpc.common.util.StringUtil;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

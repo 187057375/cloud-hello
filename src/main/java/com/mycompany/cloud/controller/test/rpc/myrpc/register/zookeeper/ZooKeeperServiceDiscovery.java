@@ -1,7 +1,7 @@
 package com.mycompany.cloud.controller.test.rpc.myrpc.register.zookeeper;
 
-import com.xxx.rpc.common.util.CollectionUtil;
-import com.xxx.rpc.registry.ServiceDiscovery;
+import com.mycompany.cloud.controller.test.rpc.myrpc.common.util.CollectionUtil;
+import com.mycompany.cloud.controller.test.rpc.myrpc.register.ServiceDiscovery;
 import org.I0Itec.zkclient.ZkClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

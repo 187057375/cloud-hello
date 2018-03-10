@@ -1,6 +1,6 @@
 package com.mycompany.cloud.controller.test.rpc.myrpc.common.codec;
 
-import com.xxx.rpc.common.util.SerializationUtil;
+import com.mycompany.cloud.controller.test.rpc.myrpc.common.util.SerializationUtil;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;

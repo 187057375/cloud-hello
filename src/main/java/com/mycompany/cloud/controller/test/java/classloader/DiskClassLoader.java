@@ -11,7 +11,11 @@ import java.io.IOException;
  *          Copyright 2018 by PreTang
  */
 public class DiskClassLoader extends ClassLoader {
+    static
 
+    {
+        System.out.println("静态初始化块执行了！");
+    }
     private String mLibPath;
 
     public DiskClassLoader(String path) {

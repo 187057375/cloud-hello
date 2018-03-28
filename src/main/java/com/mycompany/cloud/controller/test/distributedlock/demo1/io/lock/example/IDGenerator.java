@@ -1,7 +1,8 @@
 package com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.example;
 
-import io.lock.Lock;
-import io.lock.Releasable;
+
+import com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.Lock;
+import com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.Releasable;
 
 import java.math.BigInteger;
 import java.util.concurrent.TimeUnit;
@@ -9,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 模拟分布式环境中的ID生成 
  * 
- * @author lixiaohui
+ *
  * @date 2016年9月19日 下午9:18:40
  *
  */

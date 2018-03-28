@@ -1,21 +1,19 @@
 package com.mycompany.cloud.controller.test.distributedlock.demo2.lock.zk;
 
-import com.distributed.lock.DistributedReentrantLock;
-import com.google.common.collect.Maps;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.lock.DistributedReentrantLock;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
-import org.apache.curator.framework.recipes.locks.LockInternalsDriver;
-import org.apache.curator.framework.recipes.locks.StandardLockInternalsDriver;
 import org.apache.zookeeper.KeeperException;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import java.util.concurrent.*;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 基于Zookeeper的可重入互斥锁(关于重入:仅限于持有zk锁的jvm内重入)
- * Created by sunyujia@aliyun.com on 2016/2/24.
+ *  2016/2/24.
  */
 public class ZkReentrantLock implements DistributedReentrantLock {
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(ZkReentrantLock.class);

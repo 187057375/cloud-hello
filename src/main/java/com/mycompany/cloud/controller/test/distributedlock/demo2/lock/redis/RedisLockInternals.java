@@ -1,22 +1,17 @@
 package com.mycompany.cloud.controller.test.distributedlock.demo2.lock.redis;
 
-import org.jboss.netty.util.internal.NonReentrantLock;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.exceptions.JedisException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.LockSupport;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * Created by sunyujia@aliyun.com on 2016/2/26.
+ *  2016/2/26.
  */
 class RedisLockInternals {
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(RedisLockInternals.class);

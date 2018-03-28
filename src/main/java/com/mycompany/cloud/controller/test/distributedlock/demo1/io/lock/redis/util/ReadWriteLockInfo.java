@@ -3,12 +3,12 @@
  */
 package com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.redis.util;
 
-import io.lock.util.ObjectUtils;
+
+import com.alibaba.fastjson.JSON;
+import com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.util.ObjectUtils;
 
 import java.util.HashSet;
 import java.util.Set;
-
-import com.alibaba.fastjson.JSON;
 
 /**
  * ReadWriteLockInfo
@@ -17,7 +17,7 @@ import com.alibaba.fastjson.JSON;
  * if writeInfo is null, then readInfos must be null or its size must be 0. if condition mentioned 
  * above are not set up, then we have reason to think that this lock is useless.
  * 
- * @author lixiaohui
+ *
  * @date 2016年9月17日 下午12:09:28
  * 
  */

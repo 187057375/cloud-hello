@@ -1,15 +1,14 @@
 package com.mycompany.cloud.controller.test.distributedlock.demo2.lock.zk;
 
-import com.distributed.lock.Callback;
-import com.distributed.lock.DistributedLockTemplate;
+
+import com.mycompany.cloud.controller.test.distributedlock.demo2.lock.Callback;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.lock.DistributedLockTemplate;
 import org.apache.curator.framework.CuratorFramework;
 import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by sunyujia@aliyun.com on 2016/2/26.
- */
+
 public class ZkDistributedLockTemplate implements DistributedLockTemplate {
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(ZkDistributedLockTemplate.class);
 

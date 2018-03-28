@@ -1,7 +1,7 @@
 package com.mycompany.cloud.controller.test.distributedlock.demo2.sequence.zk;
 
-import com.distributed.lock.zk.ZkReentrantLockCleanerTask;
-import com.distributed.sequence.DistributedSequence;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.lock.zk.ZkReentrantLockCleanerTask;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.sequence.DistributedSequence;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -9,7 +9,7 @@ import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.slf4j.LoggerFactory;
 
 /**
- * Created by sunyujia@aliyun.com on 2016/2/25.
+ *  2016/2/25.
  */
 public class ZkDistributedSequence implements DistributedSequence {
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(ZkReentrantLockCleanerTask.class);

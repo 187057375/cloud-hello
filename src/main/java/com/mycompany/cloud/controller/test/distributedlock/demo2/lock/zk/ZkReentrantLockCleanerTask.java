@@ -11,7 +11,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Created by sunyujia@aliyun.com on 2016/2/25.
+ *  2016/2/25.
  */
 public class ZkReentrantLockCleanerTask extends TimerTask {
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(ZkReentrantLockCleanerTask.class);

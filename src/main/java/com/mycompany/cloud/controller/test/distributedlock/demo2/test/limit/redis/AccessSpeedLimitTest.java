@@ -1,12 +1,13 @@
-package com.distributed.limit.redis;
+package com.mycompany.cloud.controller.test.distributedlock.demo2.test.limit.redis;
 
-import com.distributed.lock.redis.RedisDistributedLockTemplate;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.limit.redis.AccessSpeedLimit;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.limit.redis.LimitRule;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.lock.redis.RedisDistributedLockTemplate;
 import org.junit.Test;
 import redis.clients.jedis.JedisPool;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by sunyujia@aliyun.com on 2016/2/27.

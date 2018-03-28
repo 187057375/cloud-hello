@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/test/es")
-public class EsHelloController extends BaseController {
+public class EsSpringDataController extends BaseController {
 /*
 
     */

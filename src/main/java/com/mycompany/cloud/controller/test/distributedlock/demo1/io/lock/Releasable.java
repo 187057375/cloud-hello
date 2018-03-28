@@ -8,7 +8,7 @@ package com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock;
  * </ul>
  * 因此锁应该实现该接口, 并在{@link Releasable#resease() release} 方法中释放相关的连接
  * 
- * @author lixiaohui
+ *
  *
  */
 public interface Releasable {

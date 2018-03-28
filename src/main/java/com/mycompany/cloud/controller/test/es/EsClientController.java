@@ -38,8 +38,8 @@ import java.util.concurrent.ExecutionException;
  *          Copyright 2017 by PreTang
  */
 @RestController
-@RequestMapping("/test/es/estest")
-public class EsTestController extends BaseController {
+@RequestMapping("/test/es/esclient")
+public class EsClientController extends BaseController {
 
     @Autowired
     private TransportClient client;

@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 锁的骨架实现, 真正的获取锁的步骤由子类去实现.
  * 
- * @author lixiaohui
+ *
  *
  */
 public abstract class AbstractLock implements Lock {

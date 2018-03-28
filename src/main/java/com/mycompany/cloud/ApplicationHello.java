@@ -1,6 +1,7 @@
 package com.mycompany.cloud;
 
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.mycompany.cloud.controller.test.zuul.AccessUserNameFilter;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -24,6 +26,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableZuulProxy
+@EnableEurekaServer
 public class ApplicationHello {
     @Bean
     @LoadBalanced
@@ -57,6 +60,14 @@ public class ApplicationHello {
         template.setMessageConverter(new Jackson2JsonMessageConverter());
         return template;
     }
+
+    @Bean
+    public AccessUserNameFilter accessUserNameFilter() {
+        return new AccessUserNameFilter();
+    }
+
+
+
     public static void main(String[] args) {
         System.out.println("hello-----");
         new SpringApplicationBuilder(ApplicationHello.class).web(true).run(args);

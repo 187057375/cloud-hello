@@ -1,7 +1,7 @@
 package com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.util;
 
 /**
- * @author lixiaohui
+ *
  * @date 2016年9月19日 下午9:53:16
  * 
  */

@@ -1,17 +1,13 @@
-package com.distributed.lock.redis;
+package com.mycompany.cloud.controller.test.distributedlock.demo2.test.lock.redis;
 
-import com.distributed.lock.Callback;
-import org.junit.Test;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.lock.Callback;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.lock.redis.RedisDistributedLockTemplate;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.lock.redis.RedisReentrantLock;
 import redis.clients.jedis.JedisPool;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.ReentrantLock;
 
-/**
- * Created by sunyujia@aliyun.com on 2016/2/24.
- */
+
 public class SimpleTest {
 
     public static void main(String[] args) throws Exception {

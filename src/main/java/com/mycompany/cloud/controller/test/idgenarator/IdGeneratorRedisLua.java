@@ -13,7 +13,7 @@ import java.util.List;
  * @version V1.0 创建时间：18/3/23
  *          Copyright 2018 by PreTang
  */
-public class IdGeneratorRedis {
+public class IdGeneratorRedisLua {
 
 
     /**
@@ -24,12 +24,12 @@ public class IdGeneratorRedis {
 
     int index = 0;
 
-    private IdGeneratorRedis() {
+    private IdGeneratorRedisLua() {
 
     }
 
-    private IdGeneratorRedis(List<Pair<JedisPool, String>> jedisPoolList,
-                        int retryTimes) {
+    private IdGeneratorRedisLua(List<Pair<JedisPool, String>> jedisPoolList,
+                                int retryTimes) {
         this.jedisPoolList = jedisPoolList;
         this.retryTimes = retryTimes;
     }
@@ -52,8 +52,8 @@ public class IdGeneratorRedis {
             return this;
         }
 
-        public IdGeneratorRedis build() {
-            return new IdGeneratorRedis(jedisPoolList, retryTimes);
+        public IdGeneratorRedisLua build() {
+            return new IdGeneratorRedisLua(jedisPoolList, retryTimes);
         }
     }
 
@@ -120,14 +120,14 @@ public class IdGeneratorRedis {
     public static void main(String[] args) {
         String tab = "order";
         long userId = 123456789;
-        IdGeneratorRedis idGenerator = IdGeneratorRedis.builder()
+        IdGeneratorRedisLua idGenerator = IdGeneratorRedisLua.builder()
                 .addHost("127.0.0.1", 6379, "c5809078fa6d652e0b0232d552a9d06d37fe819c")
 //				.addHost("127.0.0.1", 7379, "accb7a987d4fb0fd85c57dc5a609529f80ec3722")
 //				.addHost("127.0.0.1", 8379, "f55f781ca4a00a133728488e15a554c070b17255")
                 .build();
         long id = idGenerator.next(tab, userId);
         System.out.println("id:" + id);
-        List<Long> result = IdGeneratorRedis.parseId(id);
+        List<Long> result = IdGeneratorRedisLua.parseId(id);
         System.out.println("miliSeconds:" + result.get(0) + ", partition:"  + result.get(1) + ", seq:" + result.get(2));
     }
 }

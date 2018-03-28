@@ -1,15 +1,15 @@
 package com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.redis;
 
-import io.lock.AbstractLock;
-import io.lock.Lock;
-import io.lock.ReadWriteLock;
-import io.lock.redis.util.ReadWriteLockInfo;
+
+import com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.AbstractLock;
+import com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.Lock;
+import com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.ReadWriteLock;
+import com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.redis.util.ReadWriteLockInfo;
+import redis.clients.jedis.Jedis;
 
 import java.io.IOException;
 import java.net.SocketAddress;
 import java.util.concurrent.TimeUnit;
-
-import redis.clients.jedis.Jedis;
 
 /**
  * 基于Redis的分布式读写可重入锁(读读不互斥, 读写互斥, 写写互斥)
@@ -20,7 +20,7 @@ import redis.clients.jedis.Jedis;
  * }
  * </pre>
  * 
- * @author lixiaohui
+ *
  * @date 2016年9月17日 上午11:52:06
  *
  */

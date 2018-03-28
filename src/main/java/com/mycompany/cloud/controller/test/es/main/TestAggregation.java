@@ -1,4 +1,4 @@
-package org.zjt;
+package com.mycompany.cloud.controller.test.es.main;
 
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
 import org.elasticsearch.action.bulk.BulkResponse;

@@ -7,7 +7,7 @@ package com.mycompany.cloud.controller.test.es;
  */
 //@Configuration
 //@EnableElasticsearchRepositories(basePackages = "com.pretang.cloud.es")
-public class EsHelloConfig {
+public class EsSpringDataConfig {
 
 /*
     @Value("${elasticsearch.host}")

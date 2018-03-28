@@ -12,10 +12,10 @@ import java.util.Date;
  * @version V1.0 创建时间：18/3/23
  *          Copyright 2018 by PreTang
  */
-public class IdGeneratorRedisInc {
+public class IdGeneratorRedisIncr {
 
     public static void main(String[] args) {
-        IdGeneratorRedisInc idg2=new IdGeneratorRedisInc();
+        IdGeneratorRedisIncr idg2=new IdGeneratorRedisIncr();
         String ooo = null;
         try {
             ooo = idg2.generateCode("myDisttriId","order_",true,10);

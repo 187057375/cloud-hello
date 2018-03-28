@@ -3,15 +3,13 @@ package com.mycompany.cloud.controller.test.distributedlock.demo2.limit.redis;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.exceptions.JedisConnectionException;
-import redis.clients.jedis.exceptions.JedisException;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * 分布式速率限制 例如:限制n秒钟请求x次
- * Created by sunyujia@aliyun.com on 2015/9/30.
+ *  2015/9/30.
  */
 public class AccessSpeedLimit {
 

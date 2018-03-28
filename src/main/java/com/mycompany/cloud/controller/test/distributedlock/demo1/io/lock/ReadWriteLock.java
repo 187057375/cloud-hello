@@ -13,7 +13,7 @@ package com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock;
  * <p>
  * 一个读写锁同时只能有一个写者或多个读者, 但不能同时既有读者又有写者
  * </p>
- * @author lixiaohui
+ *
  *
  */
 public interface ReadWriteLock {

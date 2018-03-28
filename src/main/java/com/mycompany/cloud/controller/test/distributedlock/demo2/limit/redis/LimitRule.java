@@ -1,10 +1,8 @@
 package com.mycompany.cloud.controller.test.distributedlock.demo2.limit.redis;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * 限制规则
- * Created by sunyujia@aliyun.com on 2015/9/30.
+ *  2015/9/30.
  */
 public class LimitRule {
 

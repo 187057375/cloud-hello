@@ -2,7 +2,7 @@ package com.mycompany.cloud.controller.test.distributedlock.demo2.lock;
 
 /**
  * 分布式锁模板类
- * Created by sunyujia@aliyun.com on 2016/2/23.
+ *  2016/2/23.
  */
 public interface DistributedLockTemplate {
 

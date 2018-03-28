@@ -1,19 +1,16 @@
-package com.distributed.lock.zk;
+package com.mycompany.cloud.controller.test.distributedlock.demo2.test.lock.zk;
 
-import com.distributed.lock.Callback;
-import com.distributed.lock.redis.RedisDistributedLockTemplate;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.lock.Callback;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.lock.zk.ZkDistributedLockTemplate;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.junit.Test;
-import redis.clients.jedis.JedisPool;
 
-import java.util.concurrent.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * Created by sunyujia@aliyun.com on 2016/2/24.
- */
 
 
 public class ZkReentrantLockTemplateTest {

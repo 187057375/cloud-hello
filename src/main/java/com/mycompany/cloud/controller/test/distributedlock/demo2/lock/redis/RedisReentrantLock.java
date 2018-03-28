@@ -1,21 +1,15 @@
 package com.mycompany.cloud.controller.test.distributedlock.demo2.lock.redis;
 
-import com.distributed.lock.DistributedReentrantLock;
 import com.google.common.collect.Maps;
-import redis.clients.jedis.Jedis;
+import com.mycompany.cloud.controller.test.distributedlock.demo2.lock.DistributedReentrantLock;
 import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.exceptions.JedisException;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Created by sunyujia@aliyun.com on 2016/2/26.
+ *  2016/2/26.
  */
 public class RedisReentrantLock implements DistributedReentrantLock {
 

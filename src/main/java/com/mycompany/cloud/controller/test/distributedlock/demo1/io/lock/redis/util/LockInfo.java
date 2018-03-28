@@ -1,14 +1,14 @@
 package com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.redis.util;
 
-import io.lock.util.PlatformUtils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
+import com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.util.PlatformUtils;
 
 /**
  * 锁信息
  * 
- * @author lixiaohui
+ *
  * @date 2016年9月14日 上午10:22:39
  *
  */

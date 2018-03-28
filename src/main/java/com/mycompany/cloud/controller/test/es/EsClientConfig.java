@@ -11,7 +11,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 @Configuration
-public class EsTestConfig {
+public class EsClientConfig {
     @Bean
     public TransportClient client() throws UnknownHostException {
         InetSocketTransportAddress node = new InetSocketTransportAddress(
@@ -20,7 +20,9 @@ public class EsTestConfig {
         );
 
         Settings settings = Settings.builder()
-                .put("cluster.name", "wali")
+                .put("transport.type","netty3")
+                .put("http.type", "netty3")
+                .put("cluster.name", "elasticsearch-hhee")
                 .build();
         TransportClient client = new PreBuiltTransportClient(settings);
         client.addTransportAddress(node);

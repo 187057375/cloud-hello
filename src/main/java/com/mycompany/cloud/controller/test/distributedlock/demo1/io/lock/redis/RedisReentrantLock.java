@@ -1,15 +1,13 @@
 package com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.redis;
 
-import io.lock.AbstractLock;
-import io.lock.Lock;
-import io.lock.redis.util.LockInfo;
 
-import java.util.concurrent.TimeUnit;
-
+import com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.AbstractLock;
+import com.mycompany.cloud.controller.test.distributedlock.demo1.io.lock.redis.util.LockInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import redis.clients.jedis.Jedis;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * 基于Redis的SETNX操作实现的分布式锁, 获取锁时最好用tryLock(long time, TimeUnit unit), 以免网路问题而导致线程一直阻塞.
@@ -48,7 +46,7 @@ import redis.clients.jedis.Jedis;
  * </pre>
  * </p>
  * 
- * @author lixiaohui
+ *
  * @date 2016年9月15日 下午2:52:38
  *
  */

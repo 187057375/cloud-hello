@@ -50,7 +50,7 @@ public class HttpUtil {
         CloseableHttpClient closeHttpClient = HttpClients.createDefault();
         CloseableHttpResponse httpResponse = null;
         //发送Post请求
-        HttpPost httpPost = new HttpPost("http://172.28.1.12:8080/app/sso/hmfaccount/editNickName");
+        HttpPost httpPost = new HttpPost("http://172.28.1.12:8080/app/sso/hmfaccount/1");
         try {
 
             StringEntity entity = new StringEntity(payload, "utf-8");//解决中文乱码问题

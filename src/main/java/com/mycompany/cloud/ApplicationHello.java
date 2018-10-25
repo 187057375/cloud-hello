@@ -7,7 +7,6 @@ import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
@@ -15,6 +14,8 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Random;
 
 
 /**
@@ -70,7 +71,8 @@ public class ApplicationHello {
 
     public static void main(String[] args) {
         System.out.println("hello-----");
-        new SpringApplicationBuilder(ApplicationHello.class).web(true).run(args);
+        System.out.println( new Random().nextBoolean());
+        //new SpringApplicationBuilder(ApplicationHello.class).web(true).run(args);
     }
 
 }
